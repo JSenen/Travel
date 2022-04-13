@@ -3,10 +3,16 @@ package com.travel.juansenen.domain;
 public class Rutas {
     private int idruta;
     private float precio;
-    private int iddestno;
+    private int iddestino;
     private int idorigen;
 
     public Rutas(){}
+
+    public Rutas(float precio, int iddestino, int idorigen) {
+        this.precio = precio;
+        this.iddestino = iddestino;
+        this.idorigen = idorigen;
+    }
 
     public int getIdruta() {
         return idruta;
@@ -25,11 +31,11 @@ public class Rutas {
     }
 
     public int getIddestno() {
-        return iddestno;
+        return iddestino;
     }
 
     public void setIddestno(int iddestno) {
-        this.iddestno = iddestno;
+        this.iddestino = iddestno;
     }
 
     public int getIdorigen() {
