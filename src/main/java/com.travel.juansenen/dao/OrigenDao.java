@@ -35,7 +35,7 @@ public class OrigenDao {
     }
     //Metodo para buscar por origen
     public ArrayList<Origen> findOrigenes(String searchtext) throws SQLException {
-        String sql = "SELECT * FROM ORIGENES WHERE INSTR(origen, ?) != 0";
+        String sql = "SELECT idorigen FROM ORIGENES WHERE origen = ?";
         ArrayList<Origen> origenes = new ArrayList<>();
 
         PreparedStatement statement = conexion.prepareStatement(sql);

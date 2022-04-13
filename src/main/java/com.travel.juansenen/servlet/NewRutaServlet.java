@@ -27,6 +27,8 @@ public class NewRutaServlet extends HttpServlet {
         String numvuelo = request.getParameter("numvuelo");
         String modelo = request.getParameter("modelo");
 
+        out.println("<h1>"+idorigen+"  "+iddestino+"  "+precio+"   "+numvuelo+"   "+modelo+" <h1>");
+
 
         //Conectamos bases de datos
         BaseDatos baseDatos = new BaseDatos();
