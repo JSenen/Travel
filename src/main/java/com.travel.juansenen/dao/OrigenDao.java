@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Optional;
 
 import static com.travel.juansenen.util.Constantes.NOBD;
 
@@ -80,4 +81,5 @@ public class OrigenDao {
 
         return origenes;
     }
+
 }

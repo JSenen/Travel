@@ -35,7 +35,7 @@
                    </tr>
                     </thead>
                     <tbody>
-                    <%-- Listamos los datos --%>
+                    <%-- Listamos los datos Id RUTA y PRECIO--%>
 <%
             for (Rutas ruta: rutas) {
             out.println("<tr>");
@@ -52,7 +52,7 @@
                    </tr>
                     </thead>
                     <tbody>
-                    <%-- Listamos los datos --%>
+                    <%-- Listamos los datos ORIGEN--%>
 <%
             for (Origen origen: origenes) {
             out.println("<tr>");
@@ -69,7 +69,7 @@
                    </tr>
                     </thead>
                     <tbody>
-                    <%-- Listamos los datos --%>
+                   <%-- Listamos los datos DESTINO--%>
 <%
             for (Destino destino: destinos) {
             out.println("<tr>");

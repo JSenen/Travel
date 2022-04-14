@@ -22,7 +22,7 @@ public class RutasDao {
         //Método para añadir rutas
     public void addruta(Rutas rutas){
         //Creamos sentencia SQL
-        String sql = "INSERT INTO RUTAS (idruta,precio,,idorigen,iddestino) VALUES (AUTO_IDRUTA.nextval, ?, ?, ?)";
+        String sql = "INSERT INTO RUTAS (idruta,precio,,idorigen,iddestino) VALUES (AUTO_IDRUTA.nextval, ?, ?)";
 
         // SQL (auto_id.nexval) nos da el numero siguiente automaticamente en la base
         try{
