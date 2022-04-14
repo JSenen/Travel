@@ -70,11 +70,11 @@
             <div class="form-group">
                             <label for="exampleFormControlSelect1">Modelo Avion</label>
                                 <select class="form-control" name="modelo">
-                                <option>Boeing 737<option>
-                                <option>Boeing 737MAX<option>
-                                <option>Boeing 747<option>
-                                <option>Airbus A320<option>
-                                <option>Boeing A380<option>
+                                <option value="Boeing737">Boeing 737<option>
+                                <option value="Boeing737MAX">Boeing 737MAX<option>
+                                <option value="Boeing747">Boeing 747<option>
+                                <option value="AirbusA320">Airbus A320<option>
+                                <option value="AirbusA380">Airbus A380<option>
                                 </select>
             </div>
 

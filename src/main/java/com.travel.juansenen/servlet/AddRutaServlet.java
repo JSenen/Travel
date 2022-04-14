@@ -42,10 +42,11 @@ public class AddRutaServlet extends HttpServlet {
         //Creamos el objeto Ruta
         Rutas rutas = new Rutas(precio, origen, destino);
         rutasDao.addruta(rutas);
-        int idruta = rutas.getIdruta();
+
+
 
         //Creamos el objeto Aviones
-        Aviones aviones = new Aviones(idruta, modelo, numvuelo);
+        Aviones aviones = new Aviones( modelo, numvuelo, origen, destino);
         avionesDao.addAvion(aviones);
 
 
