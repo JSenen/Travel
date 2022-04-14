@@ -1,7 +1,8 @@
 package com.travel.juansenen.dao;
 
+import com.travel.juansenen.domain.Origen;
 import com.travel.juansenen.domain.Rutas;
-import com.travel.juansenen.domain.Usuarios;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,30 +19,7 @@ public class RutasDao {
         this.conexion = conexion;
     }
 
-    public ArrayList<Rutas> listarRutas(){
-        String sql = "SELECT * FROM RUTAS ORDER BY origen";
-        ArrayList<Rutas> ruta = new ArrayList<>();
-
-        try {
-
-            PreparedStatement statement = conexion.prepareStatement(sql);
-            ResultSet resultSet = statement.executeQuery(sql);
-            while (resultSet.next()) {
-                Rutas rutas = new Rutas();
-                rutas.setIdruta(resultSet.getInt("idruta"));
-                rutas.setIdorigen(resultSet.getInt("idorigen"));
-                rutas.setIddestno(resultSet.getInt("iddestino"));
-                rutas.setPrecio(resultSet.getFloat("precio"));
-
-                ruta.add(rutas);
-            }
-        }catch (SQLException sqe){
-            sqe.printStackTrace();
-        }
-
-        return ruta;
-    }
-    //Método para añadir rutas
+        //Método para añadir rutas
     public void addruta(Rutas rutas){
         //Creamos sentencia SQL
         String sql = "INSERT INTO RUTAS (idruta,precio,,idorigen,iddestino) VALUES (AUTO_IDRUTA.nextval, ?, ?, ?)";
@@ -58,6 +36,29 @@ public class RutasDao {
             sqe.printStackTrace();
             System.out.println(NOBD);
         }
+    }
+    //Método listar todos los registros de la base
+    public ArrayList<Rutas> listrutas(){
+        String sql = "SELECT * FROM rutas ORDER BY idruta";
+        ArrayList<Rutas> rutas = new ArrayList<>();
+
+        try {
+
+            PreparedStatement statement = conexion.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                Rutas ruta = new Rutas();
+                ruta.setIdruta(resultSet.getInt("idruta"));
+                ruta.setIdorigen(resultSet.getInt("idorigen"));
+                ruta.setIddestno(resultSet.getInt("iddestino"));
+                ruta.setPrecio(resultSet.getFloat("precio"));
+                rutas.add(ruta);
+            }
+        }catch (SQLException sqe){
+            sqe.printStackTrace();
+        }
+
+        return rutas;
     }
 
 

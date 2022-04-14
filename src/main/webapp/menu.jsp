@@ -29,7 +29,7 @@
                    %>
                 <div class="form-outline mb-4">
                     <a class="btn btn-warning" href="listusuarios.jsp" role="button">Listado Clientes</a>
-                    <a class="btn btn-warning" href="addruta.jsp" role="button">Crear ruta</a>
+                    <a class="btn btn-warning" href="listrutas.jsp" role="button">Listado Rutas</a>
 
                 </div>
                 <%
