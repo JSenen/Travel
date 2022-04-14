@@ -16,6 +16,18 @@
  <html lang="en">
   <jsp:include page="header.jsp" />
  <body>
+ <script type="text/javascript"> //!--Script de Ajax para asincronia de formulario con servidor-- >
+       $(document).ready(function () {
+         $("form").on("submit", function (event) {
+           event.preventDefault();
+           var formValue = $(this).serialize();
+           $.post("addruta", formValue, function (data) {
+             $("#result").html(data);
+           });
+         });
+       });
+   </script>
+
 <%
             BaseDatos baseDatos = new BaseDatos();
             OrigenDao origendao = new OrigenDao(baseDatos.getConectionDao());
@@ -26,12 +38,11 @@
             <form action="addruta" method="post">
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Origen</label>
-                    <select class="form-control" id="origenes" name="idorigen">
+                    <select class="form-control" name="origen">
                     <%-- Listamos los datos ORIGENES --%>
                     <%
                     for (Origen origen: origenes) {
-                            out.println("<option data-value=origen.getIdorigen>"+origen.getOrigen()+"<option>");
-
+                            out.println("<option>"+origen.getOrigen()+"<option>");
                     }
                      %>
 
@@ -39,12 +50,12 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Destino</label>
-                    <select class="form-control" id="destinos" name="iddestino">
+                    <select class="form-control"  name="destino">
                     <%-- Listamos los datos DESTINOS --%>
                     <%
                     for (Destino destino: destinos) {
-                            out.println("<option data-value2=origen.getIddestino>"+destino.getDestino()+"<option>");
-                            int iddestino = destino.getIddestino();
+                            out.println("<option>"+destino.getDestino()+"<option>");
+
                     }
                      %>
                     </select>
@@ -60,4 +71,7 @@
             <div class="form-group row">
                     <button type="submit" class="btn btn-primary">Nueva Ruta</button>
             </div>
+            <div class="d-flex p-2 bd-highlight justify-content-center">
+                    <div class="col-sm-2" id="result"></div> <!-- Muestra el resultado --> </div>
+                </div>
             </form>

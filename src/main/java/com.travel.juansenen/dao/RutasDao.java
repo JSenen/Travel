@@ -22,15 +22,15 @@ public class RutasDao {
         //Método para añadir rutas
     public void addruta(Rutas rutas){
         //Creamos sentencia SQL
-        String sql = "INSERT INTO RUTAS (idruta,precio,,idorigen,iddestino) VALUES (AUTO_IDRUTA.nextval, ?, ?)";
+        String sql = "INSERT INTO RUTAS (idruta,precio,idorigen,iddestino) VALUES (AUTO_IDRUTA.nextval, ?, (SELECT idorigen FROM origenes WHERE origen = ?), (SELECT iddestino FROM destinos WHERE destino = ?))";
 
         // SQL (auto_id.nexval) nos da el numero siguiente automaticamente en la base
         try{
             //Lanzamos la sentencia a la BD
             PreparedStatement instruccion = conexion.prepareStatement(sql);
             instruccion.setFloat(1, rutas.getPrecio());
-            instruccion.setInt(2, rutas.getIdorigen());
-            instruccion.setInt(3, rutas.getIddestno());
+            instruccion.setString(2, rutas.getOrigen());
+            instruccion.setString(3, rutas.getDestino());
             instruccion.executeUpdate();
         }catch (SQLException sqe){
             sqe.printStackTrace();
