@@ -1,4 +1,5 @@
 package com.travel.juansenen.domain;
+import java.security.SecureRandom;
 
 public class Aviones {
     private int idavion;
@@ -8,10 +9,12 @@ public class Aviones {
 
     public Aviones(){}
 
-    public Aviones(String modelo, String numvuelo) {
+    public Aviones(int idruta, String modelo, String numvuelo) {
+        this.idruta = idruta;
         this.modelo = modelo;
         this.numvuelo = numvuelo;
     }
+    //generador de cadena aleatoria para los numeros de vuelo
 
     public int getIdavion() {
         return idavion;

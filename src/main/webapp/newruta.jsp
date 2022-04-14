@@ -8,7 +8,7 @@
  <%@ page import="com.travel.juansenen.dao.OrigenDao" %>
  <%@ page import="com.travel.juansenen.domain.Origen" %>
  <%@ page import="com.travel.juansenen.dao.DestinoDao" %>
-  <%@ page import="com.travel.juansenen.domain.Destino" %>
+ <%@ page import="com.travel.juansenen.domain.Destino" %>
  <%@ page import="java.util.*" %>
  <%@ page import="java.sql.SQLException" %>
 
@@ -63,10 +63,22 @@
             <div class="form-group row">
                     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Precio</label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control form-control-sm" id="tarjeta" name="precio"
+                      <input type="number" class="form-control form-control-sm" step="any" id="tarjeta" name="precio"
                         placeholder="Precio">
                     </div>
-                  </div>
+            </div>
+            <div class="form-group">
+                            <label for="exampleFormControlSelect1">Modelo Avion</label>
+                                <select class="form-control" name="modelo">
+                                <option>Boeing 737<option>
+                                <option>Boeing 737MAX<option>
+                                <option>Boeing 747<option>
+                                <option>Airbus A320<option>
+                                <option>Boeing A380<option>
+                                </select>
+            </div>
+
+
 
             <div class="form-group row">
                     <button type="submit" class="btn btn-primary">Nueva Ruta</button>

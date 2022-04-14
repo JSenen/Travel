@@ -1,8 +1,11 @@
 package com.travel.juansenen.servlet;
 
+import com.travel.juansenen.dao.AvionesDao;
 import com.travel.juansenen.dao.BaseDatos;
 import com.travel.juansenen.dao.RutasDao;
+import com.travel.juansenen.domain.Aviones;
 import com.travel.juansenen.domain.Rutas;
+import com.travel.juansenen.util.Constantes;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,19 +28,29 @@ public class AddRutaServlet extends HttpServlet {
         String origen = request.getParameter("origen");
         String destino = request.getParameter("destino");
         float precio = Float.parseFloat(request.getParameter("precio"));
+        String modelo = request.getParameter("modelo");
+        String numvuelo = Constantes.generateRandomString(12);
 
 
         //Conectamos a bases datos necesarias
         BaseDatos baseDatos = new BaseDatos();
         RutasDao rutasDao = new RutasDao(baseDatos.getConectionDao());
+        AvionesDao avionesDao = new AvionesDao(baseDatos.getConectionDao());
+
 
 
         //Creamos el objeto Ruta
         Rutas rutas = new Rutas(precio, origen, destino);
         rutasDao.addruta(rutas);
+        int idruta = rutas.getIdruta();
+
+        //Creamos el objeto Aviones
+        Aviones aviones = new Aviones(idruta, modelo, numvuelo);
+        avionesDao.addAvion(aviones);
+
 
         //Devolvemos mesaje de grabación al result del jsp
-        out.println("<div class='alert alert-success' role='alert'>ID nueva ruta"+origen+" agregado correctamente</div>");
+        out.println("<div class='alert alert-success' role='alert'>NUEVA RUTA AGREGADA</div>");
 
 
 
