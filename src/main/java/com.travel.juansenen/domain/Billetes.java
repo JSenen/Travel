@@ -12,6 +12,10 @@ public class Billetes {
 
     public Billetes(){    }
 
+    public Billetes(int idruta, int idusuario){
+
+    }
+
     public Billetes(String origen, String destino, String numvuelo, String modelo, float precio, int idruta) {
         this.origen = origen;
         this.destino = destino;

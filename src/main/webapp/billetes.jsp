@@ -16,6 +16,13 @@
     <jsp:include page="header.jsp" />
 <body>
 <%
+    Usuarios usuarios = (Usuarios) session.getAttribute("currentuser");
+    if (usuarios == null) {
+        response.sendRedirect("index.jsp");
+    }
+
+%>
+<%
             BaseDatos baseDatos = new BaseDatos();
             BilletesDao billetesdao = new BilletesDao(baseDatos.getConectionDao());
             List<Billetes> billetes = billetesdao.listbilletes();
@@ -41,7 +48,7 @@
      <%
                  for (Billetes billete: billetes) {
 
-                 out.println("<th>"+billete.getIdruta()+"</th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a href=>Comprar</a></td>");
+                 out.println("<th>"+billete.getIdruta()+"</th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a href=addbillete?idruta="+billete.getIdruta()+">Comprar</a></td>");
 
                  }
 

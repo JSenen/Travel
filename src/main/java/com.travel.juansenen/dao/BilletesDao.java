@@ -1,5 +1,6 @@
 package com.travel.juansenen.dao;
 
+import com.travel.juansenen.domain.Aviones;
 import com.travel.juansenen.domain.Billetes;
 
 
@@ -9,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static com.travel.juansenen.util.Constantes.NOBD;
 
 public class BilletesDao {
     private Connection conexion;
@@ -41,5 +44,22 @@ public class BilletesDao {
         }
 
         return billetes;
+    }
+    //Método para añadir aviones
+    public void addBillete(Billetes billetes){
+        //Creamos sentencia SQL
+        String sql = "INSERT INTO billetes (idbillete, idavion) VALUES (AUTO_IDBILLETE.nextval, idavion)";
+
+        // SQL (auto_id.nexval) nos da el numero siguiente automaticamente en la base
+        try{
+            //Lanzamos la sentencia a la BD
+            PreparedStatement instruccion = conexion.prepareStatement(sql);
+            instruccion.setInt(1,billetes.getIdavion());
+
+            instruccion.executeUpdate();
+        }catch (SQLException sqe){
+            sqe.printStackTrace();
+            System.out.println(NOBD);
+        }
     }
 }
