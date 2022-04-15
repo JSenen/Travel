@@ -1,5 +1,5 @@
 package com.travel.juansenen.domain;
-import java.security.SecureRandom;
+
 
 public class Aviones {
     private int idavion;
@@ -8,6 +8,7 @@ public class Aviones {
     private String numvuelo;
     private String origen;
     private String destino;
+
 
     public Aviones(){}
 

@@ -1,6 +1,5 @@
 package com.travel.juansenen.dao;
 
-import com.travel.juansenen.domain.Origen;
 import com.travel.juansenen.domain.Rutas;
 
 
@@ -60,6 +59,7 @@ public class RutasDao {
 
         return rutas;
     }
+
 
 
 }

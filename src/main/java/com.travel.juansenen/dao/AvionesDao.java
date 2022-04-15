@@ -1,11 +1,14 @@
 package com.travel.juansenen.dao;
 
 import com.travel.juansenen.domain.Aviones;
+import com.travel.juansenen.domain.Usuarios;
 
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 
 import static com.travel.juansenen.util.Constantes.NOBD;
 
@@ -34,5 +37,28 @@ public class AvionesDao {
             sqe.printStackTrace();
             System.out.println(NOBD);
         }
+    }
+    //Metodo para encontrar Id de un cliente
+    public Optional<Aviones> findAvion(int idavion){
+        //Añadimos sentencia SQL para busqueda en BD
+        String sql = "SELECT * FROM aviones WHERE idruta = ?";
+        Aviones aviones = null;
+
+        try{
+            PreparedStatement sentencia = conexion.prepareStatement(sql);
+            sentencia.setInt(1,idavion);
+            ResultSet resultSet = sentencia.executeQuery();
+            //Ejecutamos la consulta a la tabla
+            if (resultSet.next()) {
+                aviones = new Aviones();
+                aviones.setIdavion(resultSet.getInt("idavion"));
+                aviones.setIdruta(resultSet.getInt("idruta"));
+            }
+
+        }catch (SQLException sqe){
+            sqe.printStackTrace();
+        }
+        // Devuelve el resultado si se ha encontrado y si no null
+        return Optional.ofNullable(aviones);
     }
 }

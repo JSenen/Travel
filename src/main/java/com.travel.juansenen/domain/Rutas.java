@@ -7,6 +7,8 @@ public class Rutas {
     private int idorigen;
     private String origen;
     private String destino;
+    private String numvuelo;
+    private String modelo;
 
     public Rutas(){}
 
@@ -67,5 +69,29 @@ public class Rutas {
 
     public void setIdorigen(int idorigen) {
         this.idorigen = idorigen;
+    }
+
+    public int getIddestino() {
+        return iddestino;
+    }
+
+    public void setIddestino(int iddestino) {
+        this.iddestino = iddestino;
+    }
+
+    public String getNumvuelo() {
+        return numvuelo;
+    }
+
+    public void setNumvuelo(String numvuelo) {
+        this.numvuelo = numvuelo;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 }

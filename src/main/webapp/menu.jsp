@@ -22,7 +22,7 @@
              </div>
              <div>
                 <div class="form-outline mb-4">
-                    <a class="btn btn-primary" href="listrutas.jsp" role="button">Rutas</a>
+                    <a class="btn btn-primary" href="billetes.jsp" role="button">Billetes</a>
                 </div>
                  <%
                    if ((usuarios != null) && (usuarios.getRol().equals("administrador"))) {
