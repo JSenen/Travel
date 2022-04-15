@@ -33,6 +33,7 @@ public class BilletesDao {
                 billete.setNumvuelo(resultSet.getString("numvuelo"));
                 billete.setPrecio(resultSet.getFloat("precio"));
                 billete.setModelo(resultSet.getString("modelo"));
+                billete.setIdruta(resultSet.getInt("idruta"));
                 billetes.add(billete);
             }
         }catch (SQLException sqe){

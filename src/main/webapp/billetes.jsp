@@ -24,11 +24,13 @@
      <table class="table table-striped">
                          <thead class="thead-dark">
                          <tr>
-                         <th scope="col">Origen</th>
+                         <th scope="col">Id Ruta</th>
+                          <th scope="col">Origen</th>
                          <th scope="col">Destino</th>
                          <th scope="col">Precio</th>
                          <th scope="col">Numero de Vuelo</th>
                          <th scope="col">Avion</th>
+                         <th scope="col">Seleccionar</th>
 
 
                         </tr>
@@ -39,7 +41,7 @@
      <%
                  for (Billetes billete: billetes) {
 
-                 out.println("<th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td>");
+                 out.println("<th>"+billete.getIdruta()+"</th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a href=>Comprar</a></td>");
 
                  }
 
@@ -47,7 +49,7 @@
                         </tr>
                       </tbody>
                     </table>
-                  <a class="btn btn-primary" href="menu.jsp" role="button">Menu inicio</a>
+                  <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>
 
  </body>
  </html>

@@ -8,15 +8,17 @@ public class Billetes {
     private String numvuelo;
     private String modelo;
     private float precio;
+    private int idruta;
 
     public Billetes(){    }
 
-    public Billetes(String origen, String destino, String numvuelo, String modelo, float precio) {
+    public Billetes(String origen, String destino, String numvuelo, String modelo, float precio, int idruta) {
         this.origen = origen;
         this.destino = destino;
         this.numvuelo = numvuelo;
         this.modelo = modelo;
         this.precio = precio;
+        this.idruta = idruta;
     }
 
     public int getIdbillete() {
@@ -73,5 +75,13 @@ public class Billetes {
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    public int getIdruta() {
+        return idruta;
+    }
+
+    public void setIdruta(int idruta) {
+        this.idruta = idruta;
     }
 }
