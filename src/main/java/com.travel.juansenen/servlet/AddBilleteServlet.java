@@ -24,20 +24,21 @@ public class AddBilleteServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         //Recuperamos datos del JSP
-        int idruta = Integer.parseInt(request.getParameter("idruta"));
 
-        //Recuperamos datos usuario
-        Usuarios currentUser = (Usuarios) request.getSession().getAttribute("currentUser");
-        if (currentUser == null) {
-            response.sendRedirect("accesonopermitido.jsp"); //TODO Crear metodo login error
-        }
+        int idusuario = Integer.parseInt(request.getParameter("idusuario"));
+        int idavion = Integer.parseInt(request.getParameter("idavion"));
+
 
         //Conectamos a base de datos
         BaseDatos baseDatos = new BaseDatos();
-        PedidoDao pedidoDao = new PedidoDao(baseDatos.getConectionDao());
+        BilletesDao billetesDao = new BilletesDao(baseDatos.getConectionDao());
 
         //Creamos nuevo billete
-        Pedido pedido = new Pedido(idruta, currentUser.getIdusuario());
-        pedidoDao.addPedido(pedido);
+        Billetes billete = new Billetes(idavion,idusuario);
+        billetesDao.addBillete(billete);
+
+        //Devolvemos mesaje de grabación
+        out.println("<div class='alert alert-success' role='alert'>BILLETE COMPRADO</div>");
+
     }
 }

@@ -3,6 +3,7 @@ package com.travel.juansenen.domain;
 public class Billetes {
     private int idbillete;
     private int idavion;
+    private int idusuario;
     private String origen;
     private String destino;
     private String numvuelo;
@@ -12,8 +13,9 @@ public class Billetes {
 
     public Billetes(){    }
 
-    public Billetes(int idruta, int idusuario){
-
+    public Billetes (int idavion, int idusuario){
+        this.idavion = idavion;
+        this.idusuario = idusuario;
     }
 
     public Billetes(String origen, String destino, String numvuelo, String modelo, float precio, int idruta) {
@@ -23,6 +25,14 @@ public class Billetes {
         this.modelo = modelo;
         this.precio = precio;
         this.idruta = idruta;
+    }
+
+    public int getIdusuario() {
+        return idusuario;
+    }
+
+    public void setIdusuario(int idusuario) {
+        this.idusuario = idusuario;
     }
 
     public int getIdbillete() {

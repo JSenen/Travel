@@ -22,7 +22,7 @@
              </div>
              <div>
                 <div class="form-outline mb-4">
-                    <a class="btn btn-primary" href="billetes.jsp" role="button">Compra Billetes</a>
+                    <a class="btn btn-primary" href="billetes.jsp?idusuario=<%= usuarios.getIdusuario() %>" role="button">Compra Billetes</a>
                     <a class="btn btn-primary" href="compras.jsp" role="button">Mis Billetes</a>
                 </div>
                  <%

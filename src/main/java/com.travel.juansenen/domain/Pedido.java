@@ -11,6 +11,9 @@ public class Pedido {
         this.idbillete = idbillete;
         this.idusuario = idusuario;
     }
+    public Pedido(int idusuario){
+        this.idusuario = idusuario;
+    }
 
     public int getIdbillete() {
         return idbillete;

@@ -28,6 +28,7 @@
             List<Billetes> billetes = billetesdao.listbilletes();
  %>
 
+
      <table class="table table-striped">
                          <thead class="thead-dark">
                          <tr>
@@ -48,7 +49,7 @@
      <%
                  for (Billetes billete: billetes) {
 
-                 out.println("<th>"+billete.getIdruta()+"</th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a href=addbillete?idruta="+billete.getIdruta()+">Comprar</a></td>");
+                 out.println("<th>"+billete.getIdruta()+"</th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a href=compras.jsp?idusuario="+usuarios.getIdusuario()+"&nombre="+usuarios.getNombre()+"&origen="+billete.getOrigen()+"&destino="+billete.getDestino()+"&numvuelo="+billete.getNumvuelo()+"&idavion="+billete.getIdavion()+">Seleccionar</a></td>");
 
                  }
 
@@ -56,6 +57,8 @@
                         </tr>
                       </tbody>
                     </table>
+
+
                   <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>
 
  </body>

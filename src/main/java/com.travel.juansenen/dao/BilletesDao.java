@@ -37,6 +37,7 @@ public class BilletesDao {
                 billete.setPrecio(resultSet.getFloat("precio"));
                 billete.setModelo(resultSet.getString("modelo"));
                 billete.setIdruta(resultSet.getInt("idruta"));
+                billete.setIdavion(resultSet.getInt("idavion"));
                 billetes.add(billete);
             }
         }catch (SQLException sqe){
@@ -45,18 +46,19 @@ public class BilletesDao {
 
         return billetes;
     }
-    //Método para añadir aviones
+    //Método para añadir billetes comprados
     public void addBillete(Billetes billetes){
         //Creamos sentencia SQL
-        String sql = "INSERT INTO billetes (idbillete, idavion) VALUES (AUTO_IDBILLETE.nextval, idavion)";
+        String sql = "INSERT INTO billetes (idbillete, idavion, idusuario) VALUES (AUTO_IDBILLETE.nextval, ?, ?)";
 
         // SQL (auto_id.nexval) nos da el numero siguiente automaticamente en la base
         try{
             //Lanzamos la sentencia a la BD
             PreparedStatement instruccion = conexion.prepareStatement(sql);
             instruccion.setInt(1,billetes.getIdavion());
-
+            instruccion.setInt(2,billetes.getIdusuario());
             instruccion.executeUpdate();
+
         }catch (SQLException sqe){
             sqe.printStackTrace();
             System.out.println(NOBD);
