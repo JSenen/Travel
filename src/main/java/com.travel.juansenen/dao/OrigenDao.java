@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Optional;
 
 import static com.travel.juansenen.util.Constantes.NOBD;
 
@@ -35,7 +36,7 @@ public class OrigenDao {
     }
     //Metodo para buscar por origen
     public ArrayList<Origen> findOrigenes(String searchtext) throws SQLException {
-        String sql = "SELECT * FROM ORIGENES WHERE INSTR(origen, ?) != 0";
+        String sql = "SELECT idorigen FROM ORIGENES WHERE origen = ?";
         ArrayList<Origen> origenes = new ArrayList<>();
 
         PreparedStatement statement = conexion.prepareStatement(sql);
@@ -80,4 +81,5 @@ public class OrigenDao {
 
         return origenes;
     }
+
 }
