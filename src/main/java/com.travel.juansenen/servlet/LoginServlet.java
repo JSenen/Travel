@@ -37,5 +37,8 @@ public class LoginServlet extends HttpServlet {
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
+        //Cerramos conexion
+        basedatos.closeConexion();
     }
+
 }

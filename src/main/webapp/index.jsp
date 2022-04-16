@@ -26,7 +26,7 @@
 
   <!-- Submit button -->
   <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
-  <a class="btn btn-primary btn-block mb-4" href="menu.jsp" role="button">Registrarse</a>
+  <a class="btn btn-primary btn-block mb-4" href="registrarse.jsp" role="button">Registrarse</a>
   </form>
   </div>
   </body>

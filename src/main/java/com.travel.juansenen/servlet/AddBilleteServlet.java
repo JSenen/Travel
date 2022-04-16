@@ -37,8 +37,12 @@ public class AddBilleteServlet extends HttpServlet {
         Billetes billete = new Billetes(idavion,idusuario);
         billetesDao.addBillete(billete);
 
+        //Cerramos conexion
+        baseDatos.closeConexion();
+
         //Devolvemos mesaje de grabación
         out.println("<div class='alert alert-success' role='alert'>BILLETE COMPRADO</div>");
+        out.println("<a class=\"btn btn-primary\" href=\"menu.jsp\" role=\"button\">Menu inicio</a>");
 
     }
 }

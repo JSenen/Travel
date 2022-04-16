@@ -14,6 +14,17 @@
 <html lang="en">
     <jsp:include page="header.jsp" />
 <body>
+<script type="text/javascript"> //!--Script de Ajax para asincronia de formulario con servidor-- >
+       $(document).ready(function () {
+         $("form").on("submit", function (event) {
+           event.preventDefault();
+           var formValue = $(this).serialize();
+           $.post("addbillete", formValue, function (data) {
+             $("#result").html(data);
+           });
+         });
+       });
+   </script>
     <%
         String idavion = request.getParameter("idavion");
         String nombre = request.getParameter("nombre");
@@ -46,5 +57,9 @@
     </div>
   </div>
 </div>
+<div class="d-flex p-2 bd-highlight justify-content-center">
+                    <div class="col-sm-2" id="result"></div> <!-- Muestra el resultado --> </div>
+                </div>
+            </form>
 
             </form>
