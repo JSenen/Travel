@@ -35,10 +35,8 @@ public class NuevoUsuarioServlet extends HttpServlet {
         Usuarios usuario = new Usuarios( nombre, apellidos, mail, clave, tarjeta,  rol);
         usuariosDao.addUsuario(usuario);
 
-        //Cerramos base de datos
-        baseDatos.closeConexion();
 
-        //Devolvemos mesaje de grabación al result del jsp
+        //Devolvemos mensaje de grabación al result del jsp
         out.println("<div class='alert alert-success' role='alert'>NUEVO usuario"+usuario.getNombre()+" agregado correctamente</div>");
 
         //TODO añadir excepciones

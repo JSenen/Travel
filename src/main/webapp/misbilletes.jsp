@@ -32,31 +32,29 @@
      <table class="table table-striped">
                          <thead class="thead-dark">
                          <tr>
-                         <th scope="col">Id Ruta</th>
+
                           <th scope="col">Origen</th>
                          <th scope="col">Destino</th>
                          <th scope="col">Precio</th>
                          <th scope="col">Numero de Vuelo</th>
                          <th scope="col">Avion</th>
-                         <th scope="col">Seleccionar</th>
+                         <th scope="col">VER</th>
+                         </tr>
+                            </thead>
+                                <tbody>
 
-
-                        </tr>
-                         </thead>
-                         <tbody>
-                         <tr>
                          <%-- Listamos los datos --%>
      <%
                  for (Billetes billete: billetes) {
                  out.println("<tr>");
-                 out.println("<th scope=row >"+billete.getIdruta()+"</th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a href=compras.jsp?idusuario="+usuarios.getIdusuario()+"&nombre="+usuarios.getNombre()+"&origen="+billete.getOrigen()+"&destino="+billete.getDestino()+"&numvuelo="+billete.getNumvuelo()+"&idavion="+billete.getIdavion()+">Seleccionar</a></td>");
+                 out.println("<th>"+billete.getOrigen()+"</th><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a type=button href=detallebillete.jsp?idusuario="+usuarios.getIdusuario()+"&nombre="+usuarios.getNombre()+"&origen="+billete.getOrigen()+"&destino="+billete.getDestino()+"&numvuelo="+billete.getNumvuelo()+"&idavion="+billete.getIdavion()+">VER</a></td>");
                  out.println("</tr>");
                  }
 
      %>
-                        </tr>
-                      </tbody>
-                    </table>
+
+                            </tbody>
+                         </table>
 
 
                   <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>

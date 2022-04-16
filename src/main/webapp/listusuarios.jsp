@@ -20,7 +20,7 @@
             <table class="table table-striped">
                     <thead class="thead-dark">
                     <tr>
-                    <th scope="col">Id Uusario</th>
+                    <th scope="col">Id Usaurio</th>
                    <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Eliminar</th>

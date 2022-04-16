@@ -49,8 +49,6 @@ public class AddRutaServlet extends HttpServlet {
         Aviones aviones = new Aviones( modelo, numvuelo, origen, destino);
         avionesDao.addAvion(aviones);
 
-        //Cerramos conexion
-        baseDatos.closeConexion();
 
         //Devolvemos mesaje de grabación al result del jsp
         out.println("<div class='alert alert-success' role='alert'>NUEVA RUTA AGREGADA</div>");
