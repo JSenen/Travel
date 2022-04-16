@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 
                 response.sendRedirect("menu.jsp");
             } else {
-                response.sendRedirect("loginerror.jsp"); //TODO Crear accion error login
+                response.sendRedirect("loginerror.jsp");
             }
 
         } catch (SQLException sqle) {

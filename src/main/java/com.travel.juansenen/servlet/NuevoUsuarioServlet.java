@@ -39,6 +39,6 @@ public class NuevoUsuarioServlet extends HttpServlet {
         //Devolvemos mensaje de grabación al result del jsp
         out.println("<div class='alert alert-success' role='alert'>NUEVO usuario"+usuario.getNombre()+" agregado correctamente</div>");
 
-        //TODO añadir excepciones
+
     }
 }
