@@ -44,33 +44,33 @@
       <div class="form-group row">
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nombre</label>
         <div class="col-sm-5">
-          <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" value="<% out.print(usuario.getNombre()); %>">
+          <input type="text" class="form-control form-control-sm" id="nombre" name="nombre" value="<% if (usuario != null) out.print(usuario.getNombre()); else out.print("Nombre"); %>">
         </div>
       </div>
       <div class="form-group row">
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Apellidos</label>
         <div class="col-sm-5">
           <input type="text" class="form-control form-control-sm" id="apellidos" name="apellidos"
-            value="<% out.print(usuario.getApellidos()); %>">
+            value="<% if (usuario != null) out.print(usuario.getApellidos()); else out.print("Apellidos");%>">
         </div>
       </div>
       <div class="form-group row">
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Correo electrónico</label>
         <div class="col-sm-5">
-          <input type="mail" class="form-control form-control-sm" id="mail" name="mail" value="<% out.print(usuario.getMail()); %>" >
+          <input type="mail" class="form-control form-control-sm" id="mail" name="mail" value="<% if (usuario != null) out.print(usuario.getMail()); out.print("Mail"); %>" >
         </div>
       </div>
       <div class="form-group row">
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Clave</label>
         <div class="col-sm-5">
-          <input type="password" class="form-control form-control-sm" id="clave" name="clave" >
+          <input type="password" class="form-control form-control-sm" id="clave" name="clave" value="<% if (usuario != null) out.print(usuario.getClave()) ; else out.print("Clave"); %>">
         </div>
       </div>
       <div class="form-group row">
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Número Tarjeta</label>
         <div class="col-sm-10">
           <input type="text" class="form-control form-control-sm" id="tarjeta" name="tarjeta"
-            value="<% out.print(usuario.getTarjeta()) ; %>">
+            value="<% if (usuario != null) out.print(usuario.getTarjeta()) ; else out.print("Tarjeta"); %>">
         </div>
       </div>
       <div class="form-group row">

@@ -158,7 +158,7 @@ public class UsuariosDao {
         instruccion.setString(4,usuario.getClave());
         instruccion.setString(5, usuario.getTarjeta());
         instruccion.setString(6, usuario.getRol());
-        instruccion.setInt(7,usuario.getIdusuario());
+        instruccion.setInt(7,idusuario);
 
         int rows = instruccion.executeUpdate();
         return rows == 1;

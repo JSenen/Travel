@@ -12,14 +12,24 @@ public class Usuarios {
 
     public Usuarios(){}
 
+    //Constructor para registro nuevo usuario
     public Usuarios(String nombre, String apellidos, String mail, String clave, String tarjeta, String rol) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.mail = mail;
         this.clave = clave;
-        this.rol = rol;
         this.tarjeta = tarjeta;
         this.rol = rol;
+    }
+    //Constructor para modificar usuario
+    public Usuarios(String nombre, String apellidos, String mail, String clave, String tarjeta, String rol, int idusuario) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.mail = mail;
+        this.clave = clave;
+        this.tarjeta = tarjeta;
+        this.rol = rol;
+        this.idusuario = idusuario;
     }
 
     public int getIdusuario() {

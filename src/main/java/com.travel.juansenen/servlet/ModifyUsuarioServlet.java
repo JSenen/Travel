@@ -26,7 +26,7 @@ public class ModifyUsuarioServlet extends HttpServlet {
         UsuariosDao usuariosDao = new UsuariosDao(baseDatos.getConectionDao());
 
         //Recuperamos datos del JSP
-        String idusuario = request.getParameter("idusuario");
+        int idusuario = Integer.parseInt(request.getParameter("idusuario"));
         String nombre = request.getParameter("nombre");
         String apellidos = request.getParameter("apellidos");
         String mail = request.getParameter("mail");
@@ -36,17 +36,18 @@ public class ModifyUsuarioServlet extends HttpServlet {
 
 
         //Creamos el objeto
-        Usuarios usuario = new Usuarios(nombre, apellidos, mail, clave, tarjeta, rol);
+        Usuarios usuario = new Usuarios(nombre, apellidos, mail, clave, tarjeta, rol, idusuario);
 
         //Usamos el metodo de busqueda por id que modificara los campos introducidos
         try {
-            usuariosDao.modificar(Integer.parseInt(idusuario),usuario);
+            usuariosDao.modificar(idusuario,usuario);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         //Cerramos conexion base datos
         baseDatos.closeConexion();
+
         //Devolvemos el mensaje
         out.println("<div class='alert alert-success' role='alert'>MODIFICADO usuario"+usuario.getNombre()+" correctamente</div>");
 

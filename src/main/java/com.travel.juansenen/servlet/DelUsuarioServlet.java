@@ -30,10 +30,10 @@ public class DelUsuarioServlet extends HttpServlet {
             //Llamada al metodo para borrar el cliente
             boolean deleted = usuariosDao.deleteUser(idusuario);
             if (deleted){
-                out.println("<h1>USUARIO ELIMINADO CON EXITO<h1>");
+                out.println("<h2>USUARIO ELIMINADO CON EXITO<h2>");
                 out.println("<a class=\"btn btn-primary\" href=\"menu.jsp\" role=\"button\">Menu inicio</a>");
             }else{
-                out.println("<h1>USUARIO NO EXISTE EN LA BASE<h1>");
+                out.println("<h2>USUARIO NO EXISTE EN LA BASE<h2>");
                 out.println("<a class=\"btn btn-primary\" href=\"menu.jsp\" role=\"button\">Menu inicio</a>");}
         } catch (SQLException sqle) {
             sqle.printStackTrace();
