@@ -23,9 +23,10 @@
 
 %>
 <%
+            String idusuario = Integer.toString(usuarios.getIdusuario());
             BaseDatos baseDatos = new BaseDatos();
             BilletesDao billetesdao = new BilletesDao(baseDatos.getConectionDao());
-            List<Billetes> billetes = billetesdao.listbilletes();
+            List<Billetes> billetes = billetesdao.billetesuser(idusuario);
 
 
  %>
@@ -48,9 +49,11 @@
                          <%-- Listamos los datos --%>
      <%
                  for (Billetes billete: billetes) {
+
                  out.println("<tr>");
                  out.println("<th>"+billete.getOrigen()+"</th><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a type=button href=detallebillete.jsp?idusuario="+usuarios.getIdusuario()+"&nombre="+usuarios.getNombre()+"&origen="+billete.getOrigen()+"&destino="+billete.getDestino()+"&numvuelo="+billete.getNumvuelo()+"&idavion="+billete.getIdavion()+">VER</a></td>");
                  out.println("</tr>");
+
                  }
 
      %>

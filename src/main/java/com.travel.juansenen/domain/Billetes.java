@@ -18,7 +18,7 @@ public class Billetes {
         this.idusuario = idusuario;
     }
 
-    public Billetes(String origen, String destino, String numvuelo, String modelo, float precio, int idruta) {
+    public Billetes( String origen, String destino, String numvuelo, String modelo, float precio, int idruta, int idusuario) {
         this.origen = origen;
         this.destino = destino;
         this.numvuelo = numvuelo;

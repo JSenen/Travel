@@ -46,6 +46,33 @@ public class BilletesDao {
 
         return billetes;
     }
+    public ArrayList<Billetes> billetesuser(String idusuario){
+        String sql = "SELECT * FROM billetesusuario WHERE idusuario="+idusuario;
+        ArrayList<Billetes> billetes = new ArrayList<>();
+
+        try {
+
+            PreparedStatement statement = conexion.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                Billetes billete = new Billetes();
+                billete.setOrigen(resultSet.getString("origen"));
+                billete.setDestino(resultSet.getString("destino"));
+                billete.setNumvuelo(resultSet.getString("numvuelo"));
+                billete.setPrecio(resultSet.getFloat("precio"));
+                billete.setModelo(resultSet.getString("modelo"));
+                billete.setIdruta(resultSet.getInt("idruta"));
+                billete.setIdavion(resultSet.getInt("idavion"));
+                billete.setIdusuario(resultSet.getInt("idusuario"));
+
+                billetes.add(billete);
+            }
+        }catch (SQLException sqe){
+            sqe.printStackTrace();
+        }
+
+        return billetes;
+    }
     //Método para añadir billetes comprados
     public void addBillete(Billetes billetes){
         //Creamos sentencia SQL

@@ -43,7 +43,7 @@ public class UsuariosDao {
     //Metodo para encontrar Id de un cliente
     public Optional<Usuarios> findUsuario(int idusuario){
         //Añadimos sentencia SQL para busqueda en BD
-        String sql = "SELECT * FROM USUARIOS WHERE nombre = ? AND apellidos = ? AND mail = ?";
+        String sql = "SELECT * FROM USUARIOS WHERE idusuario = ?";
         Usuarios usuarios = null;
 
         try{
@@ -57,6 +57,8 @@ public class UsuariosDao {
                 usuarios.setNombre(resultSet.getString("nombre"));
                 usuarios.setApellidos(resultSet.getString("apellidos"));
                 usuarios.setMail(resultSet.getString("mail"));
+                usuarios.setClave(resultSet.getString("clave"));
+                usuarios.setTarjeta(resultSet.getString("tarjeta"));
             }
 
         }catch (SQLException sqe){
@@ -68,7 +70,7 @@ public class UsuariosDao {
     //Método para listar todos los usuarios de la base con la cadena de busqueda se le pase
     public ArrayList<Usuarios> encontrarTodos(String cadenadebusqueda) throws SQLException {
         //Sentencia de busqueda por nombre, apellidos o mail
-        String sql = "SELECT * FROM cliente WHERE INSTR(nombre, ?) != 0 OR INSTR(apellidos, ?) != 0 OR INSTR(mail, ?) != 0 ORDER BY idusuario";
+        String sql = "SELECT * FROM usuarios WHERE INSTR(nombre, ?) != 0 OR INSTR(apellidos, ?) != 0 OR INSTR(mail, ?) != 0 ORDER BY idusuario";
         ArrayList<Usuarios> usuarios = new ArrayList<>();
 
         PreparedStatement statement = conexion.prepareStatement(sql);
@@ -144,6 +146,21 @@ public class UsuariosDao {
         statement.setInt(1, idusuario);
         int rows = statement.executeUpdate();
 
+        return rows == 1;
+    }
+    public boolean modificar(int idusuario, Usuarios usuario) throws SQLException {
+        String sql = "UPDATE usuarios SET nombre = ?, apellidos = ?, mail = ? clave = ?, tarjeta =?, rol = ? WHERE idusuario = ?";
+
+        PreparedStatement instruccion = conexion.prepareStatement(sql);
+        instruccion.setString(1, usuario.getNombre());
+        instruccion.setString(2, usuario.getApellidos());
+        instruccion.setString(3, usuario.getMail());
+        instruccion.setString(4,usuario.getClave());
+        instruccion.setString(5, usuario.getTarjeta());
+        instruccion.setString(6, usuario.getRol());
+        instruccion.setInt(7,usuario.getIdusuario());
+
+        int rows = instruccion.executeUpdate();
         return rows == 1;
     }
 
