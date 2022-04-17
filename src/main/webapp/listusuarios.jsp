@@ -31,7 +31,7 @@
 <%
             for (Usuarios usuario: usuarios) {
             out.println("<tr>");
-            out.println("<td>"+usuario.getNombre()+"</td><td>"+usuario.getApellidos()+"</td><td><a  class=btn-warning href=delusuario?idusuario="+usuario.getIdusuario()+">Eliminar</a></td><td><a class=btn-info href=modificar.jsp?idusuario="+usuario.getIdusuario()+"&nombre="+usuario.getNombre()+"&apellidos="+usuario.getApellidos()+"&tarjeta="+usuario.getTarjeta()+"&mail="+usuario.getMail()+">Modificar</a></td>");
+            out.println("<th>"+usuario.getNombre()+"</th><td>"+usuario.getApellidos()+"</td><td><a  class=btn-warning href=delusuario?idusuario="+usuario.getIdusuario()+">Eliminar</a></td><td><a class=btn-info href=modificar.jsp?idusuario="+usuario.getIdusuario()+">Modificar</a></td>");
             out.println("<tr>");
             }
 %>

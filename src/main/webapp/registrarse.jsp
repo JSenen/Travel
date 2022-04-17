@@ -41,7 +41,7 @@
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Correo electrónico</label>
         <div class="col-sm-5">
           <input type="mail class="form-control form-control-sm" id="mail" name="mail"
-            placeholder="Correo eléctronico">
+            placeholder="Correo electrónico">
         </div>
       </div>
       <div class="form-group row">

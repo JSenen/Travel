@@ -16,15 +16,16 @@
 
  <body>
 
+
      <div class="d-flex p-2 mt-5 bd-highlight flex-row justify-content-center">
              <div>
                 <img src="img/logo.jpg" width="200" height="200">
              </div>
              <div>
                 <div class="form-outline mb-4">
-                    <a class="btn btn-primary" href="billetes.jsp?idusuario=<%= usuarios.getIdusuario() %>" role="button">Compra Billetes</a>
-                    <a class="btn btn-primary" href="misbilletes.jsp?idusuario=<%= usuarios.getIdusuario() %>" role="button">Mis Billetes</a>
-                    <a class="btn btn-warning" href="modificar.jsp?idusuario=<%= usuarios.getIdusuario() %>" role="button">Editar Perfil</a>
+                    <a class="btn btn-primary" href="billetes.jsp?idusuario=<% out.print(usuarios.getIdusuario()); %>" role="button">Compra Billetes</a>
+                    <a class="btn btn-primary" href="misbilletes.jsp?idusuario=<% out.print(usuarios.getIdusuario()); %>" role="button">Mis Billetes</a>
+                    <a class="btn btn-warning" href="modificar.jsp?idusuario=<% out.print(usuarios.getIdusuario()); %>" role="button">Editar Perfil</a>
                     <a class="btn btn-danger" href="index.jsp" role "button">Cerrar sesión</a>
                 </div>
                  <%

@@ -70,7 +70,7 @@ public class UsuariosDao {
     //Método para listar todos los usuarios de la base con la cadena de busqueda se le pase
     public ArrayList<Usuarios> encontrarTodos(String cadenadebusqueda) throws SQLException {
         //Sentencia de busqueda por nombre, apellidos o mail
-        String sql = "SELECT * FROM cliente WHERE INSTR(nombre, ?) != 0 OR INSTR(apellidos, ?) != 0 OR INSTR(mail, ?) != 0 ORDER BY idusuario";
+        String sql = "SELECT * FROM usuarios WHERE INSTR(nombre, ?) != 0 OR INSTR(apellidos, ?) != 0 OR INSTR(mail, ?) != 0 ORDER BY idusuario";
         ArrayList<Usuarios> usuarios = new ArrayList<>();
 
         PreparedStatement statement = conexion.prepareStatement(sql);
