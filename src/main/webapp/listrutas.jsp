@@ -26,6 +26,9 @@
             List<Destino> destinos = destinodao.listdestino();
             List<Rutas> rutas = rutasdao.listrutas();
  %>
+ <div class="d-flex p-2 mt-5 bd-highlight justify-content-center">
+ <div><h3>Viajes disponibles</h3></div>
+ </div>
             <div class="d-flex p-2 mt-5 bd-highlight justify-content-center">
             <table class="table table-striped">
                     <thead class="thead-dark">

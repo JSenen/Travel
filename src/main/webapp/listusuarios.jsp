@@ -32,7 +32,7 @@
 <%
             for (Usuarios usuario: usuarios) {
             out.println("<tr>");
-            out.println("<th><td>"+usuario.getNombre()+"</th><td>"+usuario.getApellidos()+"</th><td><a class=btn-warning href=delusuario?idusuario="+usuario.getIdusuario()+">Eliminar</a></th>");
+            out.println("<th><td>"+usuario.getNombre()+"</th><td>"+usuario.getApellidos()+"</th><td><a type=button class=btn-warning href=delusuario?idusuario="+usuario.getIdusuario()+">Eliminar</a></th>");
             out.println("<tr>");
             }
 %>

@@ -26,6 +26,8 @@
             BaseDatos baseDatos = new BaseDatos();
             BilletesDao billetesdao = new BilletesDao(baseDatos.getConectionDao());
             List<Billetes> billetes = billetesdao.listbilletes();
+
+
  %>
 
 
@@ -56,7 +58,7 @@
                             </tbody>
                          </table>
 
-
+                  <h2 class="text-center"> Listado de billetes adquiridos por <strong><% out.println(usuarios.getNombre()); %></strong></h2>
                   <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>
 
  </body>

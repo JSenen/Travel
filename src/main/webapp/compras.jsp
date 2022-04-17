@@ -40,14 +40,14 @@
     %>
 
        <form action="addbillete" method="post">
-            <div class="card mb-3" style="max-width: 640px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                         <img src="<%= modeloavion %>" alt="imagen avion" >
-                    </div>
-                         <div class="col-md-8">
-                             <div class="col-md-8 p-5">
-                                <h5 class="card-title">BILLETE</h5>
+             <div class="card mb-3" style="max-width: 640px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                     <img src="<%= modeloavion %>" >
+                                </div>
+                                     <div class="col-md-8 p-5">
+                                         <div class="card-body">
+                                            <h5 class="card-title">BILLETE</h5>
         <p class="card-text">Nombre: <strong><%= nombre %></strong></p>
         <p class="card-text">Origen:  <%= origen %></p>
         <p class="card-text">Destino: <%= destino %></p>

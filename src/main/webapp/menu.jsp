@@ -23,7 +23,8 @@
              <div>
                 <div class="form-outline mb-4">
                     <a class="btn btn-primary" href="billetes.jsp?idusuario=<%= usuarios.getIdusuario() %>" role="button">Compra Billetes</a>
-                    <a class="btn btn-primary" href="misbilletes.jsp" role="button">Mis Billetes</a>
+                    <a class="btn btn-primary" href="misbilletes.jsp?idusuario=<%= usuarios.getIdusuario() %>" role="button">Mis Billetes</a>
+                    <a class="btn btn-danger" href="index.jsp" role "button">Cerrar sesión</a>
                 </div>
                  <%
                    if ((usuarios != null) && (usuarios.getRol().equals("administrador"))) {
