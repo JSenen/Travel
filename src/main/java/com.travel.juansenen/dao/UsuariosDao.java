@@ -43,7 +43,7 @@ public class UsuariosDao {
     //Metodo para encontrar Id de un cliente
     public Optional<Usuarios> findUsuario(int idusuario){
         //Añadimos sentencia SQL para busqueda en BD
-        String sql = "SELECT * FROM USUARIOS WHERE nombre = ? AND apellidos = ? AND mail = ?";
+        String sql = "SELECT * FROM USUARIOS WHERE idusuario = ?";
         Usuarios usuarios = null;
 
         try{
@@ -57,6 +57,8 @@ public class UsuariosDao {
                 usuarios.setNombre(resultSet.getString("nombre"));
                 usuarios.setApellidos(resultSet.getString("apellidos"));
                 usuarios.setMail(resultSet.getString("mail"));
+                usuarios.setClave(resultSet.getString("clave"));
+                usuarios.setTarjeta(resultSet.getString("tarjeta"));
             }
 
         }catch (SQLException sqe){
@@ -144,6 +146,21 @@ public class UsuariosDao {
         statement.setInt(1, idusuario);
         int rows = statement.executeUpdate();
 
+        return rows == 1;
+    }
+    public boolean modificar(int idusuario, Usuarios usuario) throws SQLException {
+        String sql = "UPDATE usuarios SET nombre = ?, apellidos = ?, mail = ? clave = ?, tarjeta =?, rol = ? WHERE idusuario = ?";
+
+        PreparedStatement instruccion = conexion.prepareStatement(sql);
+        instruccion.setString(1, usuario.getNombre());
+        instruccion.setString(2, usuario.getApellidos());
+        instruccion.setString(3, usuario.getMail());
+        instruccion.setString(4,usuario.getClave());
+        instruccion.setString(5, usuario.getTarjeta());
+        instruccion.setString(6, usuario.getRol());
+        instruccion.setInt(7,usuario.getIdusuario());
+
+        int rows = instruccion.executeUpdate();
         return rows == 1;
     }
 

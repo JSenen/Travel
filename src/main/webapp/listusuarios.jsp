@@ -19,20 +19,19 @@
  %>
             <table class="table table-striped">
                     <thead class="thead-dark">
-                    <tr>
-                    <th scope="col">Id Usaurio</th>
-                   <th scope="col">Nombre</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Eliminar</th>
-                    <th scope="col">Modificar</th>
-                   </tr>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Eliminar</th>
+                            <th scope="col">Modificar</th>
+                        </tr>
                     </thead>
                     <tbody>
                     <%-- Listamos los datos --%>
 <%
             for (Usuarios usuario: usuarios) {
             out.println("<tr>");
-            out.println("<th><td>"+usuario.getNombre()+"</th><td>"+usuario.getApellidos()+"</th><td><a type=button class=btn-warning href=delusuario?idusuario="+usuario.getIdusuario()+">Eliminar</a></th>");
+            out.println("<td>"+usuario.getNombre()+"</td><td>"+usuario.getApellidos()+"</td><td><a  class=btn-warning href=delusuario?idusuario="+usuario.getIdusuario()+">Eliminar</a></td><td><a class=btn-info href=registrarse.jsp?idusuario="+usuario.getIdusuario()+">Modificar</a></td>");
             out.println("<tr>");
             }
 %>
