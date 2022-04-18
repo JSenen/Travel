@@ -23,6 +23,7 @@
              </div>
              <div>
                 <div class="form-outline mb-4">
+                    <a class="btn btn-primary" href="busquedadestino.jsp?idusuario=<% out.print(usuarios.getIdusuario()); %>" role="button">Buscar Destino</a>
                     <a class="btn btn-primary" href="billetes.jsp?idusuario=<% out.print(usuarios.getIdusuario()); %>" role="button">Compra Billetes</a>
                     <a class="btn btn-primary" href="misbilletes.jsp?idusuario=<% out.print(usuarios.getIdusuario()); %>" role="button">Mis Billetes</a>
                     <a class="btn btn-warning" href="modificar.jsp?idusuario=<% out.print(usuarios.getIdusuario()); %>" role="button">Editar Perfil</a>
