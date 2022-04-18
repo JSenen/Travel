@@ -149,7 +149,7 @@ public class UsuariosDao {
         return rows == 1;
     }
     public boolean modificar(int idusuario, Usuarios usuario) throws SQLException {
-        String sql = "UPDATE usuarios SET nombre = ?, apellidos = ?, mail = ? clave = ?, tarjeta =?, rol = ? WHERE idusuario = ?";
+        String sql = "UPDATE usuarios SET nombre = ?, apellidos = ?, mail = ?, clave = ?, tarjeta =?, rol = ? WHERE idusuario = ?";
 
         PreparedStatement instruccion = conexion.prepareStatement(sql);
         instruccion.setString(1, usuario.getNombre());
