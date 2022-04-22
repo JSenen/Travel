@@ -29,7 +29,7 @@
                           </tr>
                     </thead>
                     <tbody>
-                        <tr>
+
                          <%-- Listamos los datos --%>
 <%
             for (Usuarios usuario: usuarios) {

@@ -45,7 +45,7 @@
                         </tr>
                          </thead>
                          <tbody>
-                         <tr>
+
                          <%-- Listamos los datos --%>
      <%
                  for (Billetes billete: billetes) {
