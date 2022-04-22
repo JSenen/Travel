@@ -39,7 +39,7 @@
                  usuario = usuarioModif.get();
   %>
 
-  <div class="d-flex p-2 bd-highlight justify-content-center">
+  <div class="d-flex p-2 mt-5 bd-highlight flex-column align-items-center justify-content-center">
     <form action="modify" method="post">
       <div class="form-group row">
         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nombre</label>

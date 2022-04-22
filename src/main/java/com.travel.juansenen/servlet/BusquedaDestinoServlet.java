@@ -29,7 +29,7 @@ public class BusquedaDestinoServlet extends HttpServlet {
             ArrayList<Billetes> billetes = billetesDao.buscar(texto);
             StringBuilder result = new StringBuilder("<ul class='list-group'>");
             for (Billetes billete : billetes) {
-                result.append("<li class='list-group-item'>").append("-- ORIGEN -->").append(billete.getOrigen()).append("-- DESTINO -->").append(billete.getDestino()).append("--PRECIO ->").append(billete.getPrecio()).append("€ --AVION ->").append(billete.getModelo()).append("<a href=\"billetes.jsp\">Seleccionar</a></li>");
+                result.append("<li class='list-group-item'>").append("-- ORIGEN -->").append(billete.getOrigen()).append("<strong style=\"color:#FF0000\">-- DESTINO --></strong>").append(billete.getDestino()).append("--PRECIO ->").append(billete.getPrecio()).append("€ --AVION ->").append(billete.getModelo()).append("<a href=\"billetes.jsp\">Seleccionar</a></li>");
             }
             result.append("</ul>");
             out.println(result);

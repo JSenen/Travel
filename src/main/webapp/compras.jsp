@@ -32,23 +32,22 @@
         String destino = request.getParameter("destino");
         String numvuelo = request.getParameter("numvuelo");
         String idusuario = request.getParameter("idusuario");
-        String modeloavion = "./img/737.jpg";
-        if(idavion.equals("2")){
-            modeloavion = "./img/737max.jpg";}
-           else if(idavion.equals("3")){
-           modeloavion = "./img/747.jpg";}
+        String modeloavion= request.getParameter("modelo");
+
+
     %>
+    <div class="d-flex p-5 mt-5 bd-highlight justify-content-center">
 
        <form action="addbillete" method="post">
              <div class="card mb-3" style="max-width: 640px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                     <img src="<%= modeloavion %>" >
+                                     <img src="./img/<%= modeloavion %>.jpg" >
                                 </div>
                                      <div class="col-md-8 p-5">
                                          <div class="card-body">
                                             <h5 class="card-title">BILLETE</h5>
-        <p class="card-text">Nombre: <strong><%= nombre %></strong></p>
+        <p class="card-text">Nombre: <strong style="color:#FF0000"><%= nombre %></strong></p>
         <p class="card-text">Origen:  <%= origen %></p>
         <p class="card-text">Destino: <%= destino %></p>
         <p class="card-text">Numero de vuelo:  <%= numvuelo %></p>
@@ -58,6 +57,7 @@
       </div>
       <div class="form-group row">
              <button type="submit" class="btn btn-primary">Comprar</button>
+             <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>
       </div>
     </div>
   </div>
@@ -65,6 +65,7 @@
 <div class="d-flex p-2 bd-highlight justify-content-center">
                     <div class="col-sm-2" id="result"></div> <!-- Muestra el resultado --> </div>
                 </div>
-            </form>
+       </form>
+</body>
+</div>
 
-            </form>

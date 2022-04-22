@@ -35,6 +35,7 @@
             List<Origen> origenes = origendao.listorigen();
             List<Destino> destinos = destinodao.listdestino();
  %>
+ <div class="d-flex p-2 mt-5 bd-highlight flex-column align-items-center justify-content-center">
             <form action="addruta" method="post">
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Origen</label>
@@ -82,8 +83,12 @@
 
             <div class="form-group row">
                     <button type="submit" class="btn btn-primary">Nueva Ruta</button>
+                     <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>
             </div>
             <div class="d-flex p-2 bd-highlight justify-content-center">
                     <div class="col-sm-2" id="result"></div> <!-- Muestra el resultado --> </div>
                 </div>
             </form>
+</div>
+</body>
+</html>

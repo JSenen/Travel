@@ -4,8 +4,9 @@
 <!doctype html>
 <html lang="es">
     <jsp:include page="header.jsp" />
+
 <body>
-<body>
+<div class="d-flex p-2 mt-5 bd-highlight flex-column align-items-center justify-content-center">
     <script type="text/javascript">
         $(document).ready(function() {
             $("form").on("submit", function(event) {
@@ -25,8 +26,11 @@
                 <input name="texto" type="text" class="form-control w-25" id="texto">
             </div>
             <button type="submit" class="btn btn-primary">Buscar</button>
+             <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>
         </form>
         <div id="result"></div>
     </div>
+
+</div>
 </body>
 </html>

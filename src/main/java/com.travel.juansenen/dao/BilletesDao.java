@@ -46,7 +46,8 @@ public class BilletesDao {
     }
 
     public ArrayList<Billetes> billetesuser(String idusuario) {
-        String sql = "SELECT * FROM billetesusuario WHERE idusuario=" + idusuario;
+        int id = Integer.parseInt(idusuario);
+        String sql = "SELECT * FROM billetesusuario WHERE idusuario=" + id;
         ArrayList<Billetes> billetes = new ArrayList<>();
 
         try {
@@ -94,7 +95,7 @@ public class BilletesDao {
 
     //Método busqueda de ruta por nombre origen
     public ArrayList<Billetes> buscar(String texto) throws SQLException {
-        String sql = "SELECT * FROM billetesposibles WHERE INSTR(origen, ?) != 0 OR INSTR(destino, ?) != 0 ORDER BY destino";
+        String sql = "SELECT * FROM billetesposibles WHERE INSTR(destino, ?) != 0 OR INSTR(destino, ?) != 0 ORDER BY destino";
         ArrayList<Billetes> billetes = new ArrayList<>();
 
         PreparedStatement statement = conexion.prepareStatement(sql);

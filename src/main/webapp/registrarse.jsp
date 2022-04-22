@@ -21,7 +21,7 @@
       });
   </script>
 
-  <div class="d-flex p-2 bd-highlight justify-content-center">
+  <div class="d-flex p-2 mt-5 bd-highlight flex-column align-items-center justify-content-center">
 
     <form action="newusuario" method="post">
       <div class="form-group row">
@@ -68,6 +68,8 @@
     <div class="d-flex p-2 bd-highlight justify-content-center">
             <a class="btn btn-primary" href="index.jsp" role="button">Volver a Login</a>
    </div>
+
+</div>
 </body>
 
 </html>

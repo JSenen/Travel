@@ -31,8 +31,8 @@
 
  %>
 
-
-     <table class="table table-striped">
+<div class="container">
+            <table class="table table-fluid" id="myTable">
                          <thead class="thead-dark">
                          <tr>
 
@@ -61,8 +61,15 @@
                             </tbody>
                          </table>
 
-                  <h2 class="text-center"> Listado de billetes adquiridos por <strong><% out.println(usuarios.getNombre()); %></strong></h2>
+                  <h2 class="text-center"> Listado de billetes adquiridos por <strong style="color:#FF0000"><% out.println(usuarios.getNombre()); %></strong></h2>
                   <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>
 
+</div>
+<!-- Script paginacion -->
+                <script>
+                         $(document).ready( function () {
+                         $('#myTable').DataTable();
+                     } );
+                </script>
  </body>
  </html>

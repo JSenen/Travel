@@ -17,7 +17,7 @@
  <body>
 
 
-     <div class="d-flex p-2 mt-5 bd-highlight flex-row justify-content-center">
+     <div class="d-flex p-2 mt-5 bd-highlight flex-column align-items-center justify-content-center">
              <div>
                 <img src="img/logo.jpg" width="200" height="200">
              </div>

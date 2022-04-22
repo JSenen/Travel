@@ -22,18 +22,18 @@
         String destino = request.getParameter("destino");
         String numvuelo = request.getParameter("numvuelo");
         String idusuario = request.getParameter("idusuario");
-        String modeloavion = "./img/737.jpg";
+        String modeloavion = "./img/Boeing737.jpg";
         if(idavion.equals("2")){
-            modeloavion = "./img/737max.jpg";}
+            modeloavion = "./img/Boeing737MAX.jpg";}
            else if(idavion.equals("3")){
-           modeloavion = "./img/747.jpg";}
+           modeloavion = "./img/Boeing747.jpg";}
            else if(idavion.equals("4")){
-                      modeloavion = "./img/airbus320.jpg";}
+                      modeloavion = "./img/Airbus320.jpg";}
                       else if(idavion.equals("5")){
-                                            modeloavion = "./img/airbus380.jpg";}
+                                            modeloavion = "./img/Airbus380.jpg";}
     %>
 
-       <div class="d-flex p-2 mt-5 bd-highlight">
+<div class="d-flex p-5 mt-5 bd-highlight justify-content-center">
 
 
             <div class="card mb-3" style="max-width: 640px;">
@@ -41,20 +41,23 @@
                     <div class="col-md-4">
                          <img src="<%= modeloavion %>" >
                     </div>
-                         <div class="col-md-8 p-5">
-                             <div class="card-body">
+                    <div class="col-md-8 p-5">
+                        <div class="card-body">
                                 <h5 class="card-title">BILLETE</h5>
-        <p class="card-text">Nombre: <strong><%= nombre %></strong></p>
+        <p class="card-text">Nombre: <strong style="color:#FF0000"><%= nombre %></strong></p>
         <p class="card-text">Origen:  <%= origen %></p>
         <p class="card-text">Destino: <%= destino %></p>
         <p class="card-text">Numero de vuelo:  <%= numvuelo %></p>
         <p class="card-text"><small class="text-muted">Datos del billete adquirido</small></p>
 
-      </div>
+                         </div>
 
-    </div>
-  </div>
+                     </div>
+                 </div>
+            </div>
+            <div>
+            <a class="btn btn-primary" href="menu.jsp" role="button">Menu inicio</a>
+            </div>
 </div>
-  </div>
 
-<a class="btn btn-primary" href="menu.jsp" role="button">Menu inicio</a>
+</body>

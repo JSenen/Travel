@@ -29,16 +29,17 @@
  %>
 
 
-     <table class="table table-striped">
+<div class="container">
+            <table class="table table-fluid" id="Tablebilletes">
                          <thead class="thead-dark">
                          <tr>
-                         <th scope="col">Id Ruta</th>
-                          <th scope="col">Origen</th>
-                         <th scope="col">Destino</th>
-                         <th scope="col">Precio</th>
-                         <th scope="col">Numero de Vuelo</th>
-                         <th scope="col">Avion</th>
-                         <th scope="col">Seleccionar</th>
+                            <th scope="col">Id Ruta</th>
+                            <th scope="col">Origen</th>
+                            <th scope="col">Destino</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Numero de Vuelo</th>
+                            <th scope="col">Avion</th>
+                            <th scope="col">Seleccionar</th>
 
 
                         </tr>
@@ -49,17 +50,25 @@
      <%
                  for (Billetes billete: billetes) {
                  out.println("<tr>");
-                 out.println("<th scope=row >"+billete.getIdruta()+"</th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a href=compras.jsp?idusuario="+usuarios.getIdusuario()+"&nombre="+usuarios.getNombre()+"&origen="+billete.getOrigen()+"&destino="+billete.getDestino()+"&numvuelo="+billete.getNumvuelo()+"&idavion="+billete.getIdavion()+">Seleccionar</a></td>");
+                 out.println("<th>"+billete.getIdruta()+"</th><td>"+billete.getOrigen()+"</td><td>"+billete.getDestino()+"</td><td>"+billete.getPrecio()+"€</td><td>"+billete.getNumvuelo()+"</td><td>"+billete.getModelo()+"</td><td><a href=compras.jsp?idusuario="+usuarios.getIdusuario()+"&nombre="+usuarios.getNombre()+"&origen="+billete.getOrigen()+"&destino="+billete.getDestino()+"&numvuelo="+billete.getNumvuelo()+"&idavion="+billete.getIdavion()+"&modelo="+billete.getModelo()+"> Seleccionar</a></td>");
                  out.println("</tr>");
                  }
 
      %>
-                        </tr>
+
                       </tbody>
                     </table>
 
 
                   <a class="btn btn-primary" href="menu.jsp" role="button">Volver al Menu</a>
+ </div>
+
+            <!-- Script paginacion -->
+                <script>
+                          $(document).ready( function () {
+                          $('#Tablebilletes').DataTable();
+                      } );
+                 </script>
 
  </body>
  </html>
