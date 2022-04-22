@@ -6,6 +6,8 @@ Ciclo DAM - San Valero -
 Se ha diseñado una aplicación simple para el tratamiento y manejo de una base de datos (Oracle) desde una 
 aplicación web programada en Java.
 
+La aplicación simula una agencia de viajes que ofrece la posibilidad de la compra de billetes online.
+
 Se a utilizado el sistema DAO para el acceso a Datos. Junto con JDBC
 La página se ha creado por medio de JSP y Servlets.
 
